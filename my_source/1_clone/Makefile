@@ -9,3 +9,5 @@ all: ${EXECS}
 clone: clone.c
 	${CXX} ${CXX_FLAGS} ${CXX_LINK_FLAGS} -o $@ $<
 
+clean:
+	rm -rf ${EXECS}
