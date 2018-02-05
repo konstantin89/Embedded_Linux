@@ -55,8 +55,38 @@ int main()
         }
     }
 
+    /**************** Pointer Arithmetics *********************/
+
+    /*
+    * Note the following operator precedence:
+    *
+    * 1)Postfix inc/dec (a++, a--).
+    * 2)Postfix inc/dex (++a, --a).
+    * 3)Dereference (*a).
+    *
+    */
+    const char* str = "Hello";
+    printf("%c\n", *str);      //H
+    printf("%c\n", *str++);    //H
+    printf("%c\n", *str);      //e
+    str--;
+    printf("%c\n", *++str);    //e
+    //printf("%c\n", ++*str);  //Error, changing read-only value.
+
+    /*************/
+
+    char *c[] = {"First", "Second", "Third", "Fourth"};
+    char **cp[] = {c+3, c+2, c+1, c};
+    char ***cpp = cp;
+
+    printf("%s ", **++cpp);
+    printf("%s ", *--*++cpp+3);
+    printf("%s ", *cpp[-2]+3);
+    printf("%s \n", cpp[-1][-1]+1);
+
     return 0;
 }
+
 
 
 /********************* End Of File ********************/
