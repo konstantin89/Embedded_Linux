@@ -1,0 +1,16 @@
+
+Brief:
+
+	lstopo used to show system topology as graphical
+	or textual data.
+	It can be used to generate png image of system's 
+	CPU and PCI topology.
+
+Install:
+
+	sudo apt install hwloc
+
+
+Run command:
+
+	lstopo --output-format png > cpu.png
